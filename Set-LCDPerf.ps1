@@ -1,13 +1,4 @@
-﻿[CmdletBinding()]
-Param(
-  [Parameter(Mandatory=$True,Position=1)]
-   [string]$mqHost,
-	
-   [Parameter(Mandatory=$True)]
-   [string]$mqTopic
-)
-
-$mqHost = 'darthubuntu'
+﻿$mqHost = 'darthubuntu'
 $mqTopic = 'nodemcu/8824992'
 Function Update-LCD{
 #Date
