@@ -24,3 +24,6 @@ A 1 second delay is included in the init.lua file that breaks script execution i
 ## Prerequisites ##
 * You need to have a functioning MQTT broker running in the network, Mosquitto is used and tested
 * Mosquitto needs to be installed on the machine running the Powershell script, the Mosquitto_pub cli command must be available in the path the powershell script runs 
+
+## Attribution ##
+Uses the Lua LCD library from [Giant.Metal.Robot](http://giantmetalrobot.blogspot.in/2015/07/esp8266-i2c-lcd.html).
