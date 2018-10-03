@@ -1,5 +1,5 @@
 # MQTTPerformanceMon #
-Send Windows CPU &amp; Memory stats to MQTT for displaying on a Nodemcu connected LCD
+Send Windows CPU &amp; Memory stats to MQTT for displaying on a NodeMCU connected LCD
 
 ## Components ##
 This project comprises of these parts:
@@ -21,6 +21,8 @@ The Lua script used on the NodeMCU:
 * Provides status information back on the MQTT status topic with the NodeMCU runtime info
   
 A 1 second delay is included in the init.lua file that breaks script execution if the flash button is pressed.
+
+The NodeMCU should survive both the WiFi going down or the MQTT broker getting disconnected, both events should result in automatic reconnection.
 
 ## Prerequisites ##
 * You need to have a functioning MQTT broker running in the network, Mosquitto is used and tested
