@@ -19,7 +19,7 @@ The Lua script used on the NodeMCU:
 * Subscribes to the MQTT broker
 * Decodes the invocoming message, if it's the JSON formatted message it displays it in 2 lines, or checks the payload is just "CLS" clears the screen
 * Provides status information back on the MQTT status topic with the NodeMCU runtime info
-* 
+  
 A 1 second delay is included in the init.lua file that breaks script execution if the flash button is pressed.
 
 ## Prerequisites ##
@@ -30,4 +30,5 @@ A 1 second delay is included in the init.lua file that breaks script execution i
 
 ## Attribution ##
 Uses the Lua LCD library from [Giant.Metal.Robot](http://giantmetalrobot.blogspot.in/2015/07/esp8266-i2c-lcd.html).
+
 Uses the reliable MQTT reconnection approach in Lua from [Vincze Janos Istvan's Blog](https://blog.vinczejanos.info/2016/12/21/reliable-mqtt-connection-with-nodemcu-part-2/).
