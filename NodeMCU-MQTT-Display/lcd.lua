@@ -8,7 +8,8 @@ local dev = 0x27   -- I2C Address
 local reg = 0x00   -- write
 i2c.setup(id, sda, scl, i2c.SLOW)
 
-local bl = 0x08      -- 0x08 = back light on
+local bl = 0x08      -- 0x08 = backlight on
+local bloff = 0x00   -- 0x00 = backlight off
 
 local function send(data)
    local value = {}
@@ -23,6 +24,22 @@ local function send(data)
    i2c.stop(id)
 end
  
+local function backlightOff()
+   --local value = {}
+   data = {0x00, 0x10}
+   local value = {}
+   for i = 1, #data do
+      table.insert(value, data[i] + bloff + 0x04 + rs)
+      table.insert(value, data[i] + bloff +  rs)      -- fall edge to write
+   end
+   print(value)
+  
+   i2c.start(id)
+   i2c.address(id, dev ,i2c.TRANSMITTER)
+   i2c.write(id, reg, value)
+   i2c.stop(id)          -- display on
+ end
+
 if (rs == nil) then
 -- init
  rs = 0
@@ -87,6 +104,7 @@ lcdprint=lcdprint,
 cls = cls,
 home=home,
 cursor=cursor,
+backlightOff=backlightOff,
 }
 end
 return M

@@ -17,7 +17,7 @@ The Lua script used on the NodeMCU:
 * Connects to WiFi
 * Initializes the screen
 * Subscribes to the MQTT broker
-* Decodes the invocoming message, if it's the JSON formatted message it displays it in 2 lines, or checks the payload is just "CLS" clears the screen
+* Decodes the incoming message, if it's the JSON formatted message it displays it in 2 lines, or checks if the payload is just "CLS" clears the screen
 * Provides status information back on the MQTT status topic with the NodeMCU runtime info
   
 A 1 second delay is included in the init.lua file that breaks script execution if the flash button is pressed.
@@ -34,3 +34,7 @@ The NodeMCU should survive both the WiFi going down or the MQTT broker getting d
 Uses the Lua LCD library from [Giant.Metal.Robot](http://giantmetalrobot.blogspot.in/2015/07/esp8266-i2c-lcd.html).
 
 Uses the reliable MQTT reconnection approach in Lua from [Vincze Janos Istvan's Blog](https://blog.vinczejanos.info/2016/12/21/reliable-mqtt-connection-with-nodemcu-part-2/).
+
+## To-Do
+* Modify LCD Library to enable backlight poweroff and poweron. (Oct 3 2018)
+* Add a timer, if nothing is received after a timeout period to clear the screen and poweroff display. (Oct 3 2018)
