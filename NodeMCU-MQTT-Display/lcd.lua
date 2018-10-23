@@ -32,7 +32,6 @@ local function backlightOff()
       table.insert(value, data[i] + bloff + 0x04 + rs)
       table.insert(value, data[i] + bloff +  rs)      -- fall edge to write
    end
-   print(value)
   
    i2c.start(id)
    i2c.address(id, dev ,i2c.TRANSMITTER)

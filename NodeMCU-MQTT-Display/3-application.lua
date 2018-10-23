@@ -9,6 +9,11 @@ local function clear_screen()
     dofile("lcd.lc").cls()
 end
 
+local function backlight_off()
+    dofile("lcd.lc").cls()
+    dofile("lcd.lc").backlightOff()
+end
+
 -- Subscribe Function
 local function subsribe()
     print("Attempting to subscribe to " ..configApp.mqttSubscribeTopic)
